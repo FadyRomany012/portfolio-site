@@ -1,0 +1,313 @@
+$mainColor:#f5b535;
+$white:white;
+$black:black;
+$gray:gray;
+$progressColor:#1a1a1a;;
+body {
+    background-color:$black;
+    padding-top:94px;
+    font-family: 'Poppins', sans-serif;
+}
+h2 {
+   font-size: 60px;
+   color:$white;
+   font-weight: bold;
+}
+h2:not(.navbar-brand){margin-bottom: 80px;}
+section{padding:100px 0}
+img{height:285px;
+width:100%;
+transition: .5s .5s;
+}
+@media (max-width: 768px) { h2{font-size: 30px;} }
+.button {
+    background: $mainColor;
+    text-transform: uppercase;
+    border:1px solid $mainColor;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 10px 35px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    color: black !important;
+    transition: .5s
+}
+.button:hover{
+    background:none;
+    color:$mainColor !important;
+    border:1px solid $mainColor
+}
+// end glopal
+.navbar {
+    background:$black;
+    border-bottom: 1px solid #444141;
+    .nav-item{ padding:0px 20px !important; }
+    .nav-link {
+        color:$white !important;
+        font-size: 20px;
+        border-bottom: 2px solid transparent;
+        transition: .5s
+    }
+    .nav-link:hover{border-bottom: 2px solid $mainColor;color:$mainColor !important}
+    .navbar-brand {
+        color:$white !important;
+        font-weight: bold;
+        padding: 20px !important
+    }
+    .navbar-toggler {border:1px solid $white}
+    .active {
+        color:$mainColor !important;
+        border-bottom:2px solid $mainColor
+    }
+}
+// end navbar
+header {
+    height:calc(100vh - 95px);
+    color: $mainColor; 
+    span{color:$white}
+    p {
+        letter-spacing: 5px;
+        font-weight: bold;
+    }
+    h1{
+        line-height: 100px;
+        text-transform: capitalize;
+        font-size: 60px
+    }
+}
+@media (max-width: 992px) { 
+    header {
+        h1 {
+            font-size: 25px;
+            line-height: 45px;
+        }
+    }
+ }
+// end header
+.about {
+    li {
+        margin-bottom: 15px;
+        word-break: break-word;
+        span:first-of-type{
+            color:$white;
+            font-weight: bold;
+            width:125px;
+            display: inline-block
+        }
+        span:last-of-type{
+            color:$gray;
+            transition: .5s;
+        }
+        span:last-of-type:hover{color:$mainColor}
+    }
+    p {
+        color: $white;
+        font-weight: bold;
+        font-size: 25px;
+        span{color:$mainColor}
+    }
+}
+@media (max-width: 576px) { 
+    .about {
+        li {
+            display: flex;
+            margin-bottom: 25px;
+            span:first-of-type {
+                width:117px;
+               
+            }
+            span:last-of-type{width:125px}
+        }
+    }
+    
+ }
+ @media (max-width: 992px) { 
+      .button{font-size: 12px}
+      .about{ p{font-size: 18px} }
+ }
+// end about
+.skils {
+    .progres {
+        background: $progressColor;
+        height: 13px;
+        border-radius: 10px;
+        overflow: hidden;
+        .progres-width {
+            height: 100%;
+            width: 0;
+            background: $mainColor;
+            display: block;
+        }
+    }
+    strong{
+       color: $white;
+       padding:15px
+    }
+}
+// end skils 
+.projects {
+    font-size: 20px;
+    font-weight: bold;
+    .over {
+        position: absolute;
+        top:0;
+        bottom: 0;
+        left: -100%;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: $mainColor;
+        opacity: .8;
+        transition: .9s
+    }
+    .position-relative:hover .over {left:0}
+    .position-relative:hover img {transform: scale(1.5)}
+    .gray {cursor: pointer;transition: .5s;color: black !important}
+    .gray:hover{color:$gray !important}
+}
+// end projects
+.popupone {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: $mainColor;
+    opacity: .95;
+    z-index: 11111;
+    overflow: auto;
+    p{
+        font-weight: bold;
+        line-height: 30px;
+        font-size: 20px;
+    }
+    h3:first-of-type{margin-top:60px}
+    i {
+        position: absolute;
+        right: 15px;
+        font-size: 25px;
+        top: 15px;
+        border: 2px solid $black;
+        border-radius: 6px;
+        padding: 5px;
+    }
+    i:hover{
+        background: $black;
+        color:$white
+    }
+}
+@media (max-width: 768px) { 
+    .popupone {
+        i{font-size: 10px}
+        .inner {
+            p,h3{font-size: small}
+        }
+    }
+   
+ }
+// end popups
+.contact {
+    a{
+        color:$white !important;
+    }
+    .contact-hover:hover {color:$mainColor !important}
+}
+//end contacts
+// start css animation loading
+.load {
+    position: fixed;
+    top:0;
+    bottom:0;
+    right:0;
+    left:0;
+    background:$mainColor;
+    z-index:1111111111111;
+}
+
+
+.lds-roller {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-roller div {
+    animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    transform-origin: 40px 40px;
+  }
+  .lds-roller div:after {
+    content: " ";
+    display: block;
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: $black;
+    margin: -4px 0 0 -4px;
+  }
+  .lds-roller div:nth-child(1) {
+    animation-delay: -0.036s;
+  }
+  .lds-roller div:nth-child(1):after {
+    top: 63px;
+    left: 63px;
+  }
+  .lds-roller div:nth-child(2) {
+    animation-delay: -0.072s;
+  }
+  .lds-roller div:nth-child(2):after {
+    top: 68px;
+    left: 56px;
+  }
+  .lds-roller div:nth-child(3) {
+    animation-delay: -0.108s;
+  }
+  .lds-roller div:nth-child(3):after {
+    top: 71px;
+    left: 48px;
+  }
+  .lds-roller div:nth-child(4) {
+    animation-delay: -0.144s;
+  }
+  .lds-roller div:nth-child(4):after {
+    top: 72px;
+    left: 40px;
+  }
+  .lds-roller div:nth-child(5) {
+    animation-delay: -0.18s;
+  }
+  .lds-roller div:nth-child(5):after {
+    top: 71px;
+    left: 32px;
+  }
+  .lds-roller div:nth-child(6) {
+    animation-delay: -0.216s;
+  }
+  .lds-roller div:nth-child(6):after {
+    top: 68px;
+    left: 24px;
+  }
+  .lds-roller div:nth-child(7) {
+    animation-delay: -0.252s;
+  } 
+  .lds-roller div:nth-child(7):after {
+    top: 63px;
+    left: 17px;
+  }
+  .lds-roller div:nth-child(8) {
+    animation-delay: -0.288s;
+  }
+  .lds-roller div:nth-child(8):after {
+    top: 56px;
+    left: 12px;
+  }
+  @keyframes lds-roller {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
